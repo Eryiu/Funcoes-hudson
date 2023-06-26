@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="meustyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Arrays</title>
+
+</head>
+<body>
+  <header class="rodape-cima">
+    <h1>forEach</h1>
+  </header>
+  <div class="blz">
+    <h2>Nome de Animes</h2>
+  
+    <label for="inputNome">Digite nomes de animes:</label>
+    <br>
+    <br>
+    <input type="text" id="inputNome" placeholder="Digite o anime">
+    <ul id="listaAnimes"></ul>
+  </div>
+  <button onclick="exibirAnimes()">Exibir nome de Animes</button>
+  
+  <script>
+    function exibirAnimes() {
+      var inputNome = document.getElementById('inputNome');
+      var listaAnimes = document.getElementById('listaAnimes');
+      
+      // Limpa a lista antes de exibir os novos itens
+      listaAnimes.innerHTML = '';
+      
+      var itens = inputNome.value.split(', ');
+      
+      // Utiliza o método forEach() para iterar nos itens
+      itens.forEach(function(item) {
+        var li = document.createElement('li');
+        li.textContent = item.trim(); // Remove espaços em branco extras
+        listaAnimes.appendChild(li);
+      });
+    }
+  </script>
+  <footer class="rodape">Érica</footer> 
+</body>
+</html>
